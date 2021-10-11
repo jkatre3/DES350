@@ -3,39 +3,47 @@
 <head>
 <meta charset="UTF-8">
 	
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&display=swap" rel="stylesheet">
+	
 <style>
 
 	body {
 	background-color:darkgray;
 	margin: 0px;
-	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+	font-family: 'Comfortaa', cursive;
 	}
 	
 	
 	/*Centers calculator based on display size px*/
 	#myCalculator {
-		margin-left: calc(50% - 350px);
+		margin-left: calc(50% - 240px);
 		margin-top: 10%;
 	}
 	
 	#display {
-	width: 700px;
-	height: 100px;
+	width: 480px;
+	height: 70px;
+	border-width: 20px;
 	margin-bottom: 10px;
 	text-align: right;
 	font-size: 80px;
 	color: orange;
+	background-color:darkgray;
 	}
 	
-	.buttons {
-		margin-left: 15%;
+	.clear {
+		height: 300px;
 	}
+	
 	
 	.number {
 	width: 120px;
 	height: 80px;
 	font-size: 60px;
 	border-width: 0px;
+	border-radius: 50px;
 	margin-bottom: 10px;
 	background-color:darkgray;
 	}
@@ -49,17 +57,19 @@
 	height: 70px;
 	font-size: 60px;
 	border-width: 0px;
+	border-radius: 50px;
 	color:floralwhite;
 	background-color:darkgray;
 	}
 	
 	.operator:hover {
 		color:cadetblue;
+		background-color: floralwhite;
 	}
 	
 </style>
 	
-<title>Untitled Document</title>
+<title>math machine.</title>
 </head>
 
 <body>
@@ -71,7 +81,13 @@
 <input type="text" name="display" id="display" disabled>
 </div>
 
-<div class="buttons">
+	
+<div class="inputRow">
+<input type="button" class="operator clear" name="clear" value="c" onclick="calculator.display.value=''">
+	
+</div>
+	
+	
 <!--Row 1-->
 	
 <div class="inputRow">
@@ -128,13 +144,13 @@ onclick="calculator.display.value +='3'">
 <div class="inputRow">
 <input type="button" class="operator" name="add" value="+" onclick="calculator.display.value +='+'">
 	
-<input type="button" class="operator" name="clear" value="c" onclick="calculator.display.value=''">
+<input type="button" class="number" value="0"
+onclick="calculator.display.value +='0'">
 	
 <input type="button" class="operator" name="decimal" value="." onclick="calculator.display.value +='.'">
 		
 <input type="button" class="operator" name="equals" value="=" onclick="calculator.display.value = eval(calculator.display.value)">
 	
-</div>
 </div>	
 
 	
